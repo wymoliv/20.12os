@@ -1,0 +1,14 @@
+all: prog2.exe
+prog2.exe: main.o func1.o func2_2.o
+	gcc -o prog2.exe main.o func1.o func2_2.o
+main.o: ../src/main.c
+	gcc -c -o main.o ../src/main.c
+func1.o: ../src/func1.c
+	gcc -c -o func1.o ../src/func1.c
+func2_2.o: ../src/func2_2.c
+	gcc -c -o func2_2.o ../src/func2_2.c
+install:
+	install ../prog2.exe /project/src
+unstall:
+	 rm -rf /project/build/prog2.exe
+

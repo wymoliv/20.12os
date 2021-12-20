@@ -1,0 +1,13 @@
+all: prog.exe
+prog.exe: main.o func1.o func2_1.o
+	gcc -o prog.exe main.o func1.o func2_1.o
+main.o: ../src/main.c
+	gcc -c -o main.o ../src/main.c  
+func1.o: ../src/func1.c
+	gcc -c -o func1.o ../src/func1.c  
+func2_1.o: ../src/func2_1.c
+	gcc -c -o func2_1.o ../src/func2_1.c
+install: 
+	install ./prog.exe /project/src
+unstall:
+	rm -rf /project/build/prog.exe
